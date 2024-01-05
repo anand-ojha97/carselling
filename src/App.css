@@ -1,16 +1,103 @@
 * {
   font-family: Metrophobic;
+  font-family: Poppins;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 img {
   width: 100%;
 }
+p,
+h1,
+h2 {
+  margin: 0;
+}
+
+/* navbar css */
+.navbar-nav a {
+  color: var(--Gray-7, #495057);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.64px;
+}
+
+.user img {
+  width: 32px;
+  height: 32px;
+}
+
+.logo h1 {
+  color: var(--Gray-9, #212529);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: 1.04px;
+  margin: 0;
+}
+
+span.search {
+  border-radius: 6px 0px 0px 6px;
+  background: var(--Main, #5d20d3);
+  color: #fff;
+  padding: 10px;
+}
+
+button.btn.btn-outline-secondary {
+  border-radius: 0px 6px 6px 0px;
+  background: var(--Main, #5d20d3);
+  color: #fff;
+}
+
+ul.navbar-nav {
+  gap: 20px;
+}
+
+::placeholder {
+  color: var(--Gray-5, #adb5bd);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.56px;
+}
+
+.container .d-flex {
+  width: 615px;
+}
+
+div#navbarNav {
+  flex-grow: initial;
+}
+
+.user span {
+  margin: 0 0 0 10px;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dee2e6;
+}
+.navbar.sticky {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: position 0.3s ease, width 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* Navbar css end */
+
 .form-section {
   margin: 144px;
 }
-
 .form-section .title {
   color: #242424;
   font-size: 30px;
@@ -45,12 +132,11 @@ img {
   text-align: center;
   margin: 30px 0 0 0;
 }
-.fields-groups
-{
+.fields-groups {
   display: flex;
   align-items: center;
 }
-.fields-groups i{
+.fields-groups i {
   border-bottom: 1px solid #ccc;
   padding: 0 0 8px 0;
   cursor: pointer;
@@ -58,8 +144,109 @@ img {
 .login-link {
   margin: 85px 0 0 0;
 }
+section.banner {
+  background-image: url(/images/banner.png);
+  background-size: cover;
+  height: 849px;
+}
+nav#main-header {
+  padding: 25px 0;
+}
+
+/* baner css */
+.banner-heading h1 {
+  color: var(--bg-3, #fff);
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 70px;
+}
+.banner-heading p {
+  color: #687497;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+}
+.banner-heading,
+.selection {
+  text-align: center;
+}
+.selection {
+  position: relative;
+  margin: 70px auto auto;
+  height: 100%;
+  padding: 43px;
+  border-radius: 20px;
+  background: hsla(0, 0%, 100%, 0.22);
+  backdrop-filter: blur(10px);
+  width: 90%;
+}
+
+.selection button {
+  margin: 43px 0;
+}
+.banner-content {
+  padding: 170px 0;
+}
+.heading-section p{
+  color: #687497;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 36px; /* 150% */
+}
+.heading-section
+{
+  text-align: center;
+  margin: 40px 0;
+}
+section.makes {
+  padding: 100px 0;
+  background-color: #FBFAFE;
+}
+.heading-section h2{
+  color: var(--Gray-9, #212529);
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 69px; /* 127.778% */
+}
+section.featuredCars {
+  margin: 100px 0;
+}
+.make-card {
+  margin: 40px 0;
+}
+.view-all-btn
+{
+  text-align: center;
+}
+.view-all-btn button {
+  padding: 15px 100px;
+  height: auto;
+}
+.spin
+{
+  text-align: center;
+  margin: 40px 0;
+}
 @media only screen and (max-width: 600px) {
   .form-section {
     margin: 30px 0 0 0;
+  }
+  section.banner {
+    height: 400px;
+    background-position: center;
+  }
+  .container .d-flex {
+    width: 100%;
+    margin: 30px 0;
+  }
+}
+@media (min-width: 1400px) {
+  #root .container {
+    max-width: 1620px;
+    padding: 0;
   }
 }
