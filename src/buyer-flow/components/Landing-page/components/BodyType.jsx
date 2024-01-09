@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card, Row, Col, Button,Spin} from "antd";
+import { Card, Row, Col, Button, Spin } from "antd";
 import axios from "axios";
 
 const BodyType = () => {
@@ -8,8 +8,8 @@ const BodyType = () => {
   const [page, setPage] = useState(1);
   const limit = 12;
   const fetchMoreData = () => {
-    const token = localStorage.getItem("token"); // Replace 'your_token_key' with the actual key used for the token
-
+    const user = JSON.parse(localStorage.getItem("user"));
+    const token = user ? user.access_token : null;
     const headers = {
       Authorization: `Bearer ${token}`,
     };
@@ -17,7 +17,7 @@ const BodyType = () => {
     axios
       .get(
         `https://staging-api.pridemile.com/public/api/body-style-one?limit=${limit}&pagination=true&page=${nextPage}`,
-       
+
         { headers }
       )
       .then((response) => {
@@ -34,9 +34,8 @@ const BodyType = () => {
         console.error("Error fetching data from API:", error);
         setLoading(false);
       });
-  
-}
-useEffect(() => {
+  };
+  useEffect(() => {
     fetchMoreData();
   }, []); // Fetch initial data
 
@@ -52,11 +51,11 @@ useEffect(() => {
             {loading ? (
               <div className="spin">
                 <Spin />
-             </div>
+              </div>
             ) : (
               <Row gutter={16}>
                 {cardData.map((card, index) => (
-                    <Col xs={24} sm={12} md={8} lg={6} key={index}>
+                  <Col xs={12} sm={12} md={8} lg={4} key={index}>
                     <Card
                       hoverable
                       style={{ width: "100%", marginBottom: 16 }}

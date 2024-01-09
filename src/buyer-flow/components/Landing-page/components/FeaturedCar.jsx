@@ -105,35 +105,60 @@ const FeaturedCar = () => {
             </Col>
           ) : filteredCars.length > 0 ? (
             filteredCars.map((carData) => (
-              <Col key={carData.id} span={6}>
+              <Col key={carData.id} xs={24} sm={12} md={8} lg={6} xl={6}>
                 <Card
+                  className="cars-card"
                   cover={
                     carData.car_images.length > 0 ? (
-                      carData.car_images.map((image, index) => (
-                        <img
-                          key={index}
-                          alt={`${carData.name}-${index}`}
-                          src={image.image}
-                          style={{ height: "200px", objectFit: "cover" }}
-                        />
-                      ))
+                      <img
+                        alt={`${carData.name}-0`}
+                        src={carData.car_images[0].image} // Display only the first image
+                        style={{
+                          height: "200px",
+                          objectFit: "cover",
+                          padding: 10,
+                          borderRadius: 20,
+                        }}
+                      />
                     ) : (
                       <img
                         alt={`${carData.name}-default`}
-                        src="http://170.187.248.145/pridemile/public/images/noimage.png"
-                        style={{ height: "200px", objectFit: "contain" }}
+                        src="https://staging.pridemile.com/_next/static/media/carImg1.d333bc04.png"
+                        style={{
+                          height: "200px",
+                          objectFit: "cover",
+                          padding: 10,
+                          borderRadius: 20,
+                        }}
                       />
                     )
                   }
                   style={{ margin: "20px 0" }}
                 >
-                  {carData.id}
                   <Card.Meta
-                    title={carData.name}
-                    description={`${carData.mileage} miles | manufacture_year: ${carData.manufacture_year} | Engine: ${carData.engine_cc}`}
+                    title={<p className="car-title">{carData.title}</p>}
+                    description={
+                      <div className="car-details">
+                        <div className="carInfo">
+                          <p>{carData.mileage}</p>
+                          <span>mileage</span>
+                        </div>
+                        <div className="carInfo">
+                          <p>
+                            {carData.manufacture_year}/
+                            {carData.manufacture_month}
+                          </p>
+                          <span>year</span>
+                        </div>
+                        <div className="carInfo">
+                          <p>{carData.engine_cc}cc</p>
+                          <span>Engine</span>
+                        </div>
+                      </div>
+                    }
                   />
-                  <div style={{ marginTop: "10px", fontWeight: "bold" }}>
-                    Price: {carData.price}
+                  <div className="price">
+                    Price: <span>$ {carData.price}</span>
                   </div>
                 </Card>
               </Col>

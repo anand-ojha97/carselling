@@ -8,7 +8,9 @@ const Makes = () => {
   const [page, setPage] = useState(1);
   const limit = 12;
   const fetchMoreData = () => {
-    const token = localStorage.getItem("token");
+    const user = JSON.parse(localStorage.getItem("user"));
+    const token = user ? user.access_token : null;
+    
     const headers = {
       Authorization: `Bearer ${token}`,
     };
@@ -54,7 +56,7 @@ const Makes = () => {
             ) : (
               <Row gutter={16}>
                 {cardData.map((card, index) => (
-                  <Col xs={24} sm={12} md={8} lg={6} key={index}>
+                  <Col xs={12} sm={12} md={8} lg={4} key={index}>
                     <Card
                       hoverable
                       style={{ width: "100%", marginBottom: 16 }}
