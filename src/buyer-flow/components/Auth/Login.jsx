@@ -22,10 +22,11 @@ const Login = () => {
       });
 
       // Assuming your API returns a token upon successful login
-      const  access_token  = response.data.data.access_token;
-      console.log(access_token);
+      const  users  = response.data.data;
+      console.log(users);
       // Store the token in localStorage or a secure cookie
-      localStorage.setItem("token", access_token);
+     // Store the token in localStorage or a secure cookie
+      localStorage.setItem("user", JSON.stringify(users));
 
       // Redirect or perform other actions upon successful login
       console.log("Login successful");

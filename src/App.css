@@ -90,7 +90,6 @@ div#navbarNav {
   z-index: 1000;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   transition: position 0.3s ease, width 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 /* Navbar css end */
@@ -189,27 +188,27 @@ nav#main-header {
 .banner-content {
   padding: 170px 0;
 }
-.heading-section p{
+.heading-section p {
   color: #687497;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 36px; /* 150% */
 }
-.heading-section
-{
+.heading-section {
   text-align: center;
   margin: 40px 0;
 }
 section.makes {
   padding: 100px 0;
-  background-color: #FBFAFE;
+  background-color: #fbfafe;
 }
-.heading-section h2{
+.heading-section h2 {
   color: var(--Gray-9, #212529);
   font-size: 54px;
   font-style: normal;
   font-weight: 600;
+  word-break: break-all;
   line-height: 69px; /* 127.778% */
 }
 section.featuredCars {
@@ -218,18 +217,269 @@ section.featuredCars {
 .make-card {
   margin: 40px 0;
 }
-.view-all-btn
-{
+.view-all-btn {
   text-align: center;
 }
 .view-all-btn button {
   padding: 15px 100px;
   height: auto;
 }
-.spin
-{
+.spin {
   text-align: center;
   margin: 40px 0;
+}
+.howitworks span {
+  background-color: #5d20d3;
+  padding: 8px 20px;
+  border-radius: 100%;
+  color: #fff;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.726px;
+  margin: 0 0 25px 0;
+  display: inline-block;
+}
+.howitworks h3 {
+  color: var(--Gray-9, #212529);
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.122px;
+}
+.ant-collapse-expand-icon {
+  order: 1;
+}
+.FAQS .ant-collapse-item {
+  margin: 40px 0;
+}
+.FAQS .ant-collapse-content-active {
+  border-top: none;
+}
+.howitworks {
+  margin: 100px 0;
+}
+span.ant-collapse-header-text {
+  font-size: 18.928px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -0.94px;
+}
+.ant-collapse-content-box p {
+  font-size: 17.035px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28.392px; /* 166.667% */
+  letter-spacing: -0.752px;
+}
+.white-heading p {
+  color: #fff;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.white-heading h3 {
+  color: #fff;
+  font-size: 54px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -2.085px;
+}
+.FreeAcc {
+  background: url(../images/freacc-bg.png),
+    linear-gradient(180deg, #5d20d3, #5d20d3);
+  padding: 71px 0;
+  margin: 100px 0 0 0;
+}
+.FreeAcc input {
+  padding: 18px 22px;
+}
+.white-heading {
+  margin: 0 0 35px 0;
+}
+.FreeAcc .FreeAcc_inputs,
+.FreeAcc #password,
+.FreeAcc .ant-select-selector {
+  background: #723dd9 !important;
+  border-radius: 10px;
+  color: #fff !important;
+}
+.FreeAcc ::placeholder,
+.ant-select-selection-placeholder {
+  color: #fff !important;
+}
+.ctc-div {
+  padding: 30px;
+  background-color: #dee2e6;
+  border-radius: 20px;
+}
+.mail {
+  margin: 18px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+}
+.footer-layout {
+  background: none;
+}
+.ctc-div p {
+  color: var(--Gray-9, #212529);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.8px;
+}
+
+.ctc-div span {
+  color: var(--Gray-9, #212529);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.listing {
+  padding: 0 40px;
+}
+.listing span {
+  color: var(--Gray-9, #212529);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 37.321px; /* 207.337% */
+  margin: 0 0 20px 0;
+  display: inline-block;
+}
+.listing ul {
+  color: var(--Gray-9, #212529);
+  padding: 0;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  list-style: none;
+}
+.listing ul li {
+  margin: 0 0 10px 0;
+}
+.footer-img {
+  background-size: 100%;
+  background-image: url(../images/FooterImage.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  border-radius: 20px;
+  height: 234px;
+  padding: 30px;
+}
+.footer-img .title {
+  padding: 5px;
+  color: var(--white, #fff);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  border-radius: 8px;
+  background: #646464;
+}
+.footer-img .subtitle {
+  color: var(--white, #fff);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.56px;
+  margin: 15px 0 0 0;
+}
+.fb img {
+  width: 30px;
+}
+.fb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 90px 0 0 0;
+}
+.fb p {
+  font-size: 10px;
+  color: #fff;
+}
+.footer-section {
+  padding: 88px 0 10px 0;
+  background-color: #e9ecef;
+}
+.pay-icons img {
+  /* width: 60px; */
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  height: 50px;
+}
+.pay-icons {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0 0 0;
+}
+.icons-row {
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+.follow-us p {
+  color: var(--Gray-9, #212529);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 37.321px; /* 207.337% */
+}
+.carInfo p{
+  color: var(--Gray-9, #212529);
+  font-size: 14.821px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.593px;
+}
+.carInfo span{
+  font-size: 10.375px;
+
+}
+.car-details 
+{
+  display: flex;
+  justify-content:space-between;
+}
+.car-details :not(:last-child).carInfo
+{
+  border-right: 1px solid #ccc;
+  padding: 0 30px 0 0 ;
+}
+.car-title
+{
+  font-size: 26px;
+}
+.cars-card
+{
+  border-radius: 20px;
+  background-color: #FBFAFE;
+  box-shadow: 0px 4px 34px 0px rgba(0, 0, 0, 0.10);
+}
+.price{
+  margin: 20px 0 0 0;
+}
+.price span
+{
+  color: var(--Red, #D3203C);
+  font-size: 28px;
+  font-style: normal;
+  padding: 0 0 0 10px;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.12px;
 }
 @media only screen and (max-width: 600px) {
   .form-section {
@@ -243,10 +493,26 @@ section.featuredCars {
     width: 100%;
     margin: 30px 0;
   }
+  .pay-icons {
+    gap: 10px;
+  }
+  .pay-icons img {
+    width: 50px;
+    height: auto;
+  }
+  .heading-section h2,
+  .white-heading h3 {
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 20px 0;
+  }
+  .FAQS .ant-collapse-item {
+    margin: 20px 0;
+  }
 }
 @media (min-width: 1400px) {
   #root .container {
-    max-width: 1620px;
+    max-width: 1440px;
     padding: 0;
   }
 }

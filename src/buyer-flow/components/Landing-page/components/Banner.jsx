@@ -1,5 +1,6 @@
 import React from "react";
 import { Select, Button, Image, Row, Col } from "antd";
+const { Option } = Select;
 
 const Banner = () => {
   return (
