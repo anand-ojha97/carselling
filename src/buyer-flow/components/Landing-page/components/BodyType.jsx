@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Button, Spin } from "antd";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const BodyType = () => {
@@ -63,9 +64,9 @@ const BodyType = () => {
             )}
           </div>
           <div className="view-all-btn">
-            <Button type="primary" ghost onClick={fetchMoreData}>
-              View All
-            </Button>
+          <Link to="/car-list" > <Button type="primary" ghost >
+             View All
+            </Button></Link>
           </div>
         </div>
       </section>

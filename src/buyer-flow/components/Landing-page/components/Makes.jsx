@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card, Row, Col, Button, Spin } from "antd";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Makes = () => {
   const [cardData, setCardData] = useState([]);
@@ -34,9 +35,6 @@ const Makes = () => {
     fetchMoreData();
   }, []); // Fetch initial data
 
-  const handleViewAll = () => {
-    setVisibleCount((prevCount) => prevCount + 12);
-  };
 
   return (
     <>
@@ -78,9 +76,9 @@ const Makes = () => {
             )}
           </div>
           <div className="view-all-btn">
-            <Button type="primary" ghost onClick={handleViewAll}>
-              View All
-            </Button>
+          <Link to="/car-list" > <Button type="primary" ghost >
+             View All
+            </Button></Link>
           </div>
         </div>
       </section>
