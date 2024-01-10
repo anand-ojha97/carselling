@@ -481,6 +481,10 @@ span.ant-collapse-header-text {
   line-height: normal;
   letter-spacing: 1.12px;
 }
+.makes .ant-card {
+  border: 1px solid #f0f0f0;
+  height: 180px;
+}
 @media only screen and (max-width: 600px) {
   .form-section {
     margin: 30px 0 0 0;

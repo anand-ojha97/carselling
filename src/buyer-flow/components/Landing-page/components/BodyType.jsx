@@ -5,29 +5,13 @@ import axios from "axios";
 const BodyType = () => {
   const [cardData, setCardData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
-  const limit = 12;
-  const fetchMoreData = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    const token = user ? user.access_token : null;
-    const headers = {
-      Authorization: `Bearer ${token}`,
-    };
-    const nextPage = page + 1;
-    axios
-      .get(
-        `https://staging-api.pridemile.com/public/api/body-style-one?limit=${limit}&pagination=true&page=${nextPage}`,
 
-        { headers }
-      )
+  const fetchMoreData = () => {
+    axios
+      .get(`https://staging-api.pridemile.com/public/api/car-info-list`)
       .then((response) => {
-        // Check if response.data is an array
-        if (Array.isArray(response.data.data)) {
-          setCardData([...cardData, ...response.data.data]);
-          setPage(nextPage);
-        } else {
-          console.error("API response is not an array:", response.data);
-        }
+        let newData = response.data.data.body_style_one.slice(0, 12); // Limit to 12 items
+        setCardData([...cardData, ...newData]);
         setLoading(false);
       })
       .catch((error) => {
@@ -35,9 +19,10 @@ const BodyType = () => {
         setLoading(false);
       });
   };
+
   useEffect(() => {
     fetchMoreData();
-  }, []); // Fetch initial data
+  }, []);
 
   return (
     <>

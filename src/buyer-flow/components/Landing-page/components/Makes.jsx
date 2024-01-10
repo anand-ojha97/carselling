@@ -1,32 +1,26 @@
 import React, { useEffect, useState } from "react";
-import { Card, Row, Col, Button,Spin } from "antd";
+import { Card, Row, Col, Button, Spin } from "antd";
 import axios from "axios";
 
 const Makes = () => {
   const [cardData, setCardData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [page, setPage] = useState(1);
-  const limit = 12;
+  const [visibleCount, setVisibleCount] = useState(12);
+
   const fetchMoreData = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    const token = user ? user.access_token : null;
-    
-    const headers = {
-      Authorization: `Bearer ${token}`,
-    };
-    const nextPage = page + 1;
+    setLoading(true);
 
     axios
-      .get(
-        `https://staging-api.pridemile.com/public/api/car-maker?limit=${limit}&pagination=true&page=${nextPage}`,
-        { headers }
-      )
+      .get(`https://staging-api.pridemile.com/public/api/car-info-list`)
       .then((response) => {
-        if (Array.isArray(response.data.data)) {
-          setCardData([...cardData, ...response.data.data]);
-          setPage(nextPage);
+        if (Array.isArray(response.data.data.car_maker)) {
+          setCardData(response.data.data.car_maker);
+          setVisibleCount(12); // Reset visible count when fetching new data
         } else {
-          console.error("API response is not an array:", response.data);
+          console.error(
+            "API response is not an array:",
+            response.data.car_maker
+          );
         }
         setLoading(false);
       })
@@ -40,6 +34,10 @@ const Makes = () => {
     fetchMoreData();
   }, []); // Fetch initial data
 
+  const handleViewAll = () => {
+    setVisibleCount((prevCount) => prevCount + 12);
+  };
+
   return (
     <>
       <section className="makes">
@@ -50,12 +48,12 @@ const Makes = () => {
           </div>
           <div className="make-card">
             {loading ? (
-                 <div className="spin">
-                 <Spin />
-               </div>
+              <div className="spin">
+                <Spin />
+              </div>
             ) : (
               <Row gutter={16}>
-                {cardData.map((card, index) => (
+                {cardData.slice(0, visibleCount).map((card, index) => (
                   <Col xs={12} sm={12} md={8} lg={4} key={index}>
                     <Card
                       hoverable
@@ -80,7 +78,7 @@ const Makes = () => {
             )}
           </div>
           <div className="view-all-btn">
-            <Button type="primary" ghost onClick={fetchMoreData}>
+            <Button type="primary" ghost onClick={handleViewAll}>
               View All
             </Button>
           </div>
